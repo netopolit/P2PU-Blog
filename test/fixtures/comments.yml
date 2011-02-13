@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20110213024120
+#
+# Table name: comments
+#
+#  id         :integer         not null, primary key
+#  commenter  :string(255)
+#  body       :text
+#  post_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  commenter: MyString
+  body: MyText
+  post: 
+
+two:
+  commenter: MyString
+  body: MyText
+  post: 
