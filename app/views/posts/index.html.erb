@@ -3,8 +3,10 @@
 <% @posts.each do |post| %>
     <div class="post">
       <h2><%= link_to post.title, post %></h2>
-      <p class="poster">Posted by <%= post.user.username %></p>
-      <%= image_tag avatar_url(post.user) %>
+      <div class="poster">
+        <%= image_tag avatar_url(post.user) %><br />
+        <%= post.user.username %>
+      </div>
       <div class="post-body"><%= post.content %></div> <br />
       <%= link_to 'Show', post %>
       <% if owner?(post.user) %>

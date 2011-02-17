@@ -84,16 +84,79 @@ h4,h4 a:link,h4 a:visited{font-size:16px;margin:.75em 0 .25em 0;}
 h5,h5 a:link,h5 a:visited{font-size:14px;margin:.75em 0 .25em 0;}
 h6,h6 a:link,h6 a:visited{font-size:12px;margin:.75em 0 .25em 0;}
 
-
+body{
+  
+}
 #container {
   width: 660px;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  background: #fff;
+  -webkit-box-shadow:
+    
+    0 3px 3px rgba(0,0,0,.35);
+  -moz-box-shadow:
+    0 8px 0 #1a74a1,
+    0 15px 20px rgba(0,0,0,.35);
+  box-shadow:
+    0 8px 0 #1a74a1,
+    0 15px 20px rgba(0,0,0,.35);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 p{clear:both; margin:1.2em 0; font-size: 13px;}
 
+#user_nav{
+  
+  display: block;
+  width: 640px;
+  padding: 7px 20px;
+
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px #888;
+  -moz-box-shadow: 2px 2px 5px #888;
+  box-shadow: 2px 2px 5px #888;
+  background-image: -moz-linear-gradient(top, #F6F8F7, #E2E6E4);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #F6F8F7), color-stop(1.0, #E2E6E4));
+  background-color: #DDDDDD;
+  padding: 10px;
+  font-family: Georgia, serif;
+  font-size: 11pt;
+  color: #666666;
+  text-align: left;
+  text-shadow: #fff 1px 1px 0;
+
+}
+
+#user_nav a{
+  
+  text-decoration: underline;
+}
+
+.post{
+  position: relative;
+}
 .poster {
   font-style: italic;
-  font-size:11px;
+  font-size:12px;
+
+}
+
+.post .poster {
+  width: 80px;
+  position: absolute;
+  left: -90px;
+  top: 5px;
+  text-align: center;
+  word-wrap: break-word;
+
+}
+.post .poster img{
+  margin: 0 auto;
+
 }
 
 .metacomment {

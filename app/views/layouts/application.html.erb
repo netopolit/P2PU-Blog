@@ -9,17 +9,17 @@
 <body>
 
 <div id="container">
-
+  
   <div id="user_nav">
-    <% if user_signed_in? %>
-      Signed in as <em><%= current_user.username %></em>. |
-      <%= link_to "Sign out", destroy_user_session_path %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> or
-      <%= link_to "Sign in", new_user_session_path %> to create your own posts.
-    <% end %>
+  <% if user_signed_in? %>
+    Hello <strong><%= current_user.username %></strong>. |
+    <%= link_to "Sign out", destroy_user_session_path %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or
+    <%= link_to "Sign in", new_user_session_path %> to create your own posts.
+  <% end %>
   </div>
-
+  
   <%= yield %>
 
 </div> <!-- container -->
