@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :post_owner, :only => [:edit, :update, :destroy]
   
   # GET /posts
   # GET /posts.xml
@@ -82,4 +83,11 @@ class PostsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+  def post_owner
+    @Post = Post.find(params[:id])
+    redirect_to root_path unless @Post.user == current_user # TODO: why can't I use owner? helper method in controller?
+  end
+
 end

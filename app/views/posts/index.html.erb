@@ -16,12 +16,15 @@
     <td><%= post.title %></td>
     <td><%= post.content %></td>
     <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if owner?(post.user) %>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
+<% if user_signed_in? %>
 <br />
-
 <%= link_to 'New Post', new_post_path %>
+<% end %>

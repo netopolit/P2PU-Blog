@@ -10,11 +10,11 @@
 
 <div id="user_nav">
   <% if user_signed_in? %>
-    Signed in as <%= current_user.username %>. Not you?
+    Signed in as <em><%= current_user.username %></em>. |
     <%= link_to "Sign out", destroy_user_session_path %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %> or
-    <%= link_to "Sign in", new_user_session_path %>
+    <%= link_to "Sign in", new_user_session_path %> to create your own posts.
   <% end %>
 </div>
 
