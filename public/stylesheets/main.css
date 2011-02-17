@@ -145,3 +145,36 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   font-size: 13px;
   width: 99%;
 }
+
+
+.btn {
+  display: inline-block;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+
+}
+
+.btn span {
+  display: inline-block;
+  padding: 10px  20px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 -1px 1px rgba(19,65,88,.8);
+  background: #3194c6;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.btn:active {
+
+}
+
+.btn:active span {
+  -webkit-transform: translate(0, 2px);
+  -moz-transform: translate(0, 2px);
+  -o-transform: translate(0, 2px);
+  transform: translate(0, 2px);
+}

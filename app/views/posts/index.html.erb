@@ -19,5 +19,7 @@
 
 <% if user_signed_in? %>
 <br />
-<%= link_to 'New Post', new_post_path %>
+<%= link_to content_tag(:span, 'New Post'), new_post_path, :class => "btn" %>
+
+
 <% end %>
