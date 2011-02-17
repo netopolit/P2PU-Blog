@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110213015550
+# Schema version: 20110217024852
 #
 # Table name: posts
 #
@@ -9,12 +9,14 @@
 #  content    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
 #
 
 class Post < ActiveRecord::Base
 #  validates :name, :presence => true
-  validates :title, :presence => true,
-                    :length => {:minimum => 5}
+  validates :title, :presence => true
+  validates :content, :presence => true
+  validates :user_id, :presence => true
 
   belongs_to :user
   has_many :comments, :dependent => :destroy

@@ -22,6 +22,8 @@
 
 class User < ActiveRecord::Base
   has_many :posts, :dependent => :destroy
+  validates :username, :presence => true,
+                       :length => {:minimum => 2, :maximum => 14}
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
