@@ -10,11 +10,14 @@
     </ul>
   </div>
   <% end %>
- 
+  <%= current_user.username %>
+
   <div class="field">
-    <%= post_form.label :name %><br />
-    <%= post_form.text_field :name %>
+
+    <%= post_form.hidden_field :name, :value => current_user.username %>
+
   </div>
+
   <div class="field">
     <%= post_form.label :title %><br />
     <%= post_form.text_field :title %>
