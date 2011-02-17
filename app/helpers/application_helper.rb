@@ -10,4 +10,10 @@ module ApplicationHelper
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=48&d=#{CGI.escape(default_url)}"
   end
 
+  def sanitize_wysiwyg(input)
+    sanitize(input, :tags => %w(p strong em ul ol li a img ),
+                    :attributes => %w(id class style href title src alt width height))
+
+  end
+
 end

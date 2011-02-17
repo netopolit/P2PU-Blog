@@ -7,7 +7,7 @@
         <%= image_tag avatar_url(post.user) %><br />
         <%= post.user.username %>
       </div>
-      <div class="post-body"><%= post.content %></div> <br />
+      <div class="post-body"><%= sanitize_wysiwyg(post.content) %></div> <br />
       <%= link_to 'Show', post %>
       <% if owner?(post.user) %>
          | <%= link_to 'Edit', edit_post_path(post) %> |
