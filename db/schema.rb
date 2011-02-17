@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110217000443) do
+ActiveRecord::Schema.define(:version => 20110217003514) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110217000443) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
