@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= post_form.label :content %><br />
-    <%= post_form.text_area :content %>
+    <%= post_form.tinymce :content %>
   </div>
   <h2>Tags</h2>
   <%= render :partial => 'tags/form',
