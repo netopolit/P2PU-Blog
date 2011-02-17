@@ -87,7 +87,7 @@ class PostsController < ApplicationController
   private
   def post_owner
     @Post = Post.find(params[:id])
-    redirect_to root_path unless @Post.user == current_user # TODO: why can't I use owner? helper method in controller?
+    redirect_to root_path unless @Post.user == current_user # TODO: why can't I use owner? helper method in controller
   end
 
 end
