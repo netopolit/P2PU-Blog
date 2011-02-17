@@ -1,13 +1,19 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <div class="field">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="metacomment">
+    <div class="comment">
+      <div class="field">
+        <%= f.label :commenter %><br />
+        <%= f.text_field :commenter %>
+      </div>
+      <div class="field">
+        <label for="comment_body">Comment</label><br />
+        <%= f.text_area :body, :cols => 90, :rows => 5 %>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
   </div>
 <% end %>

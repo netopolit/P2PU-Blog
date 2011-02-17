@@ -1,30 +1,21 @@
 <h1>Listing posts</h1>
 
-<table>
-  <tr>
-    <th>Avatar</th>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= image_tag avatar_url(post.user) %></td>
-    <td><%= post.user.username %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <% if owner?(post.user) %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-  </tr>
+    <div class="post">
+      <h2><%= link_to post.title, post %></h2>
+      <p class="poster">Posted by <%= post.user.username %></p>
+      <%= image_tag avatar_url(post.user) %>
+      <div class="post-body"><%= post.content %></div> <br />
+      <%= link_to 'Show', post %>
+      <% if owner?(post.user) %>
+         | <%= link_to 'Edit', edit_post_path(post) %> |
+        <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
+      <br /> <br />
+      <%= link_to "#{post.comments.count} comments", post_url(post, :anchor => "comments") %>
+      <hr />
+    </div>
 <% end %>
-</table>
 
 <% if user_signed_in? %>
 <br />
