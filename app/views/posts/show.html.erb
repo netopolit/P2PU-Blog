@@ -4,7 +4,7 @@
 
 <p class="poster">by <%= @post.user.username %> </p>
 
-<p> <%= sanitize_wysiwyg(@post.content) %> </p>
+<p> <%= @post.content %> </p>
 
 <p> <b>Tags:</b> <%= join_tags(@post) %> </p>
 <div id="comments">
