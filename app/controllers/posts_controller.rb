@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.find(params[:id])
+    @title = @post.title
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.xml
   def new
+    @title = "New post"
     @post = current_user.posts.build
 
     respond_to do |format|
@@ -38,6 +40,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @title = "Editing post: #{@post.title}"
   end
 
   # POST /posts
