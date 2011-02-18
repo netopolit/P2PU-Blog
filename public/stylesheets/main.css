@@ -144,6 +144,10 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
 
 }
 
+#comments {
+  margin-top: 25px;
+}
+
 .metacomment {
   margin-bottom: 10px;
 }

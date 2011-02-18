@@ -6,7 +6,10 @@
 
 <p> <%= sanitize_wysiwyg @post.content %> </p>
 
+<% unless @post.tags.blank? %>
 <p> <b>Tags:</b> <%= join_tags(@post) %> </p>
+<% end %>
+
 <div id="comments">
   <%= render :partial => "comments/comment",
              :collection => @post.comments %>
