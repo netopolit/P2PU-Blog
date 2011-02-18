@@ -1,10 +1,12 @@
 <div class="comment">
-  <span class="commenter">  says:</span>
+  <span class="commenter"> <%= comment.user.username %> says:</span>
   <p> <%= sanitize_wysiwyg comment.body %> </p>
-  <p>
-    <%= link_to 'Destroy Comment', [comment.post, comment],
-                :confirm => 'Are you sure?',
-                :method => :delete %>
-  </p>
+  <% if owner?(comment.user) %>
+    <p>
+      <%= link_to 'Delete comment', [comment.post, comment],
+                  :confirm => 'Are you sure?',
+                  :method => :delete %>
+    </p>
+  <% end %>
 </div>
 <br />
