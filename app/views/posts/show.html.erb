@@ -1,6 +1,6 @@
 <p class="notice"><%= notice %></p>
 
-<h2> <%= @post.title %> </h2>
+<h2> <%= sanitize_wysiwyg @post.title %> </h2>
 
 <p class="poster">by <%= @post.user.username %> </p>
 
