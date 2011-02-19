@@ -230,3 +230,10 @@ p{clear:both; margin:1.2em 0; font-size: 13px;}
   -o-transform: translate(0, 2px);
   transform: translate(0, 2px);
 }
+
+.notice {
+  color: green;
+}
+.alert {
+  color: red;
+}
