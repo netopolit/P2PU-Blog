@@ -21,7 +21,7 @@ module ApplicationHelper
 
   def sanitize_wysiwyg(input)
     sanitize(input, :tags => %w(p strong em i b u strike  small sub sup ul ol li a img br pre code dl dt dd),
-                    :attributes => %w(id class style href title src alt width height))
+                    :attributes => %w(href title src alt width height))
 
   end
 
