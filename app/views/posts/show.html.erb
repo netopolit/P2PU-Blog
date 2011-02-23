@@ -11,8 +11,9 @@
 <div id="comments">
   <%= render :partial => "comments/comment",
              :collection => @post.comments %>
-  <%= render "comments/form" %>
 </div>
+
+<%= render "comments/form" %>
 
 <% if owner?(@post.user) %>
   <%= link_to 'Edit Post', edit_post_path(@post) %> |
