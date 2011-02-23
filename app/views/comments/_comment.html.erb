@@ -1,13 +1,13 @@
-<div class="comment">
+<%= div_for comment do %>
   <span class="commenter"> <%= comment.user.username %> says:</span>
   <p> <%= sanitize_wysiwyg comment.body %> </p>
   <% if owner?(comment.user) %>
     <p>
       <%= link_to 'Delete comment', [comment.post, comment],
                   :confirm => 'Are you sure?',
-                  :method => :delete %>
-
+                  :method => :delete,
+                  :remote => true %>
     </p>
   <% end %>
-</div>
+<% end %>
 <br />
