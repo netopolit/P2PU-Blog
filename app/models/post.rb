@@ -23,5 +23,7 @@ class Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :tags, :allow_destroy => :true,
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
+
+  attr_accessible :title, :content, :tags_attributes
   
 end

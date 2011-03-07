@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :comment_owner, :only => [:destroy]
-  before_filter :assign_current_user_id, :only => [:create, :update]
 
- 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(params[:comment])
+    @comment = @post.comments.build(params[:comment])
+    @comment.user_id = current_user.id
+    @comment.save
     respond_to do |format|
       format.html { redirect_to post_path(@post) }
       format.js
@@ -29,8 +29,4 @@ class CommentsController < ApplicationController
     redirect_to @comment.post, :notice =>"You can only destroy your own comments" unless @comment.user == current_user
   end
   
-  def assign_current_user_id
-    params[:comment][:user_id] = current_user.id
-  end
- 
 end
