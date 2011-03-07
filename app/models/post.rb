@@ -25,5 +25,4 @@ class Post < ActiveRecord::Base
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
 
   attr_accessible :title, :content, :tags_attributes
-  
 end

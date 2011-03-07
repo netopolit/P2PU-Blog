@@ -93,6 +93,4 @@ class PostsController < ApplicationController
     redirect_to root_path unless @Post.user == current_user # TODO: why can't I use owner? helper method in controller
   end
 
-
-
 end
